@@ -41,13 +41,14 @@ const App = () => {
     return true;
   });
   return (
-    <div className="App flex flex-col justify-center items-center min-h-screen bg-gray-100">
+    <div className="flex flex-col justify-center items-center min-h-screen bg-gray-100">
       <div className="text-7xl text-pink-200 font-thin mb-8">todos</div>
-      <div className="card max-w-[550px] w-full mx-auto p-4 shadow-2xl bg-white ">
-        <div className="card__input-container min-h-8 flex items-center justify-center border-b border-black mb-4 w-full">
+      <div className="max-w-[550px] w-full mx-auto shadow-2xl bg-white ">
+        <div className="min-h-[60px] pl-5 flex items-center space-x-2 justify-center border-b border-black-500 w-full">
           <div>
             <FaAngleDown
-              className="opacity-25"
+              size={"25px"}
+              className="opacity-30"
               onClick={() => addTask(value)}
             />
           </div>
@@ -65,10 +66,10 @@ const App = () => {
           />
         </div>
 
-        <ul className="card__tasks space-y-4">
+        <ul className="w-[100%]">
           {filterData.map((task) => (
             <li
-              className="card__task max-h-screen min-h-16 flex items-center space-x-4 border-b mb-4 border-black"
+              className="max-h-screen min-h-16 flex items-center space-x-2 border-b border-black-200 w-[100%] pl-3"
               key={task.id}
             >
               <div
@@ -87,14 +88,16 @@ const App = () => {
             </li>
           ))}
         </ul>
-        <div className="card__nav flex justify-between items-center mt-4">
+        <div className="card__nav flex justify-between items-center m-2">
           <div className="card__left">
             {todoData.filter((task) => !task.isDone).length} items left
           </div>
           <div className="card__filters flex space-x-4">
             <button
               className={
-                filter === "All" ? "border border-black rounded p-2" : ""
+                filter === "All"
+                  ? "border border-red-200 rounded py-1 px-2"
+                  : ""
               }
               onClick={() => {
                 setFilter("All");
@@ -104,7 +107,9 @@ const App = () => {
             </button>
             <button
               className={
-                filter === "Active" ? "border border-black rounded p-2" : ""
+                filter === "Active"
+                  ? "border border-red-200 rounded py-1 px-2"
+                  : ""
               }
               onClick={() => {
                 setFilter("Active");
@@ -114,7 +119,9 @@ const App = () => {
             </button>
             <button
               className={
-                filter === "Completed" ? "border border-black rounded p-2" : ""
+                filter === "Completed"
+                  ? "border border-red-200 rounded py-1 px-2"
+                  : ""
               }
               onClick={() => {
                 setFilter("Completed");
