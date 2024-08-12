@@ -58,6 +58,7 @@ const App = () => {
             placeholder="What needs to be done?"
             onKeyDown={(e) => {
               if (e.key === "Enter") {
+                e.preventDefault();
                 addTask(value);
               }
             }}
