@@ -67,7 +67,7 @@ const App = () => {
           />
         </div>
 
-        <ul className="w-[100%]">
+        <ul className="w-[100%] h-auto">
           {filterData.map((task) => (
             <li
               className="max-h-screen min-h-16 flex items-center space-x-2 border-b border-black-200 w-[100%] pl-3"
@@ -85,7 +85,9 @@ const App = () => {
               </div>
               <div
                 className={
-                  task.isDone ? "opacity-25 line-through hover:cursor-none" : ""
+                  task.isDone
+                    ? "opacity-25 line-through break-words hover:cursor-none"
+                    : "break-words"
                 }
               >
                 {task.text}
