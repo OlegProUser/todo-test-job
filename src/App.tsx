@@ -82,7 +82,11 @@ const App = () => {
               >
                 {task.isDone ? <FcCheckmark size={"23px"} /> : ""}
               </div>
-              <div className={task.isDone ? "opacity-25 line-through" : ""}>
+              <div
+                className={
+                  task.isDone ? "opacity-25 line-through hover:cursor-none" : ""
+                }
+              >
                 {task.text}
               </div>
             </li>
